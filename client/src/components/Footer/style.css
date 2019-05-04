@@ -1,0 +1,12 @@
+.footer a {
+    /* min-height: 60px; */
+    /* position: relative; */
+    color: #fff;
+    /* overflow: auto */
+}
+
+.octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-top;
+}
