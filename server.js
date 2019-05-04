@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const app = express();
-var db = require('./client/models');
+var db = require('./models');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
