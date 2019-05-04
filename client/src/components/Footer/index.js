@@ -18,15 +18,15 @@ class Footer extends Component {
                         <MDBCol md="6">
                             <h5 className="title">Footer Content</h5>
                             <p>Here you can use rows and columns here to organize your footer content.</p>
-                            <div class="mb-2">
-                                <a class="fb-ic" href="https://www.facebook.com">
-                                    <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            <div className="mb-2">
+                                <a className="fb-ic" href="https://www.facebook.com">
+                                    <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                 </a>
-                                <a class="tw-ic" href="https://www.twitter.com">
-                                    <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                                <a className="tw-ic" href="https://www.twitter.com">
+                                    <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                 </a>
-                                <a class="ins-ic" href="https://www.instagram.com">
-                                    <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                                <a className="ins-ic" href="https://www.instagram.com">
+                                    <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                 </a>
                             </div>
                         </MDBCol>
