@@ -9,6 +9,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
