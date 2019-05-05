@@ -3,16 +3,19 @@ const path = require("path");
 const PORT = process.env.PORT || 5000;
 const app = express();
 var db = require('./models');
+const bodyParser = require('body-parser');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+// const htmlRoutes = require('./routes/htmlRoutes');
 app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+// app.use('/html', htmlRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
