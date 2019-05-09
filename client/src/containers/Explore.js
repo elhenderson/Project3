@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-function View() {
+function Explore() {
   return (
     <div className="">
-        VIEW PAGE
+        Explore PAGE
     </div>
   );
 }
 
-export default View;
+export default Explore;
