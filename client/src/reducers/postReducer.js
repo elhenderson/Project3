@@ -10,7 +10,9 @@ export default function(state = initialState, action) {
         case GET_POSTS:
         return {
             ...state,
-            posts: action.payload
+            posts: action.payload.rows,
+            total: action.payload.count,
+            limit: action.payload.limit
         }
         case DELETE_POST:
             return {

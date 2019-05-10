@@ -6,11 +6,33 @@ import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact
 
 class Post extends Component {
 
+  constructor() {
+    super()
+    this.renderPagination = this.renderPagination.bind(this);
+  }
+
   componentWillMount() {
     this.props.getPosts();
   }
 
+  renderPagination = () => {
+    const {limit, total} = this.props
+    const pages = total / limit
+    const links = [];
+    console.log(pages);
+    for(var i = 1; i < pages; i++ ) {
+      links.push(
+        <MDBPageItem key={i}>
+          <MDBPageNav>{i}</MDBPageNav>
+        </MDBPageItem>
+      )
+    }
+    return links;
+  }
+
   render() {
+    console.log(this.props.posts)
+    {if(this.props.posts.length > 1) {console.log("hello")}}
     const postsList = this.props.posts.map(post => (
       <div key={post.id}>
         <br/>
@@ -25,23 +47,22 @@ class Post extends Component {
         {postsList}
         <MDBRow>
           <MDBCol>
-            <MDBPagination className="mb-5">
+            <MDBPagination className="mb-5" size="lg">
               <MDBPageItem>
                 <MDBPageNav aria-label="Previous">
                   <span aria-hidden="true">Previous</span>
                 </MDBPageNav>
               </MDBPageItem>
-              <MDBPageItem>
+              {this.renderPagination()}
+              {/* <MDBPageItem>
                 <MDBPageNav href="explore/1">
                   1
                 </MDBPageNav>
               </MDBPageItem>
-              <MDBPageItem>
-                <MDBPageNav>2</MDBPageNav>
-              </MDBPageItem>
+
               <MDBPageItem>
                 <MDBPageNav>3</MDBPageNav>
-              </MDBPageItem>
+              </MDBPageItem> */}
               <MDBPageItem>
                 <MDBPageNav aria-label="Previous">
                   <span aria-hidden="true">Next</span>
@@ -61,7 +82,7 @@ Post.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  posts: state.post.posts
+  ...state.post
 })
 
 export default connect(mapStateToProps, {getPosts})(Post);
