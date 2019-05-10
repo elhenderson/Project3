@@ -11,6 +11,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 const apiRoutes = require('./routes/apiRoutes');
 // const htmlRoutes = require('./routes/htmlRoutes');

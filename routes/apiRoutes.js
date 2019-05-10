@@ -9,7 +9,7 @@ const User = models.User;
 //Post routes
 router.get("/getPosts", (req, res) => {
     Post.findAll()
-    .then((result) => res.json(result));
+    .then((result) => res.json(result))
 })
 
 router.post("/post", (req, res) => {

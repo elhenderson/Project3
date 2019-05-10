@@ -1,12 +1,12 @@
 import axios from 'axios';
 import {GET_POSTS, ADD_POST, DELETE_POST, EDIT_POST} from './types';
 
-export const getPosts = () => {
+export const getPosts = () => dispatch => {
     axios
     .get('/api/getPosts')
-    .then(res => ({
+    .then(posts => dispatch({
         type: GET_POSTS,
-        payload: res.data
+        payload: posts.data
     }))
 }
 
