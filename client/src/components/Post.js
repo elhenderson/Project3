@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Proptypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getPosts} from '../actions/postActions'
+import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact";
 
 class Post extends Component {
 
@@ -22,6 +23,33 @@ class Post extends Component {
       <div>
         <h1>Posts</h1>
         {postsList}
+        <MDBRow>
+          <MDBCol>
+            <MDBPagination className="mb-5">
+              <MDBPageItem>
+                <MDBPageNav aria-label="Previous">
+                  <span aria-hidden="true">Previous</span>
+                </MDBPageNav>
+              </MDBPageItem>
+              <MDBPageItem>
+                <MDBPageNav href="explore/1">
+                  1
+                </MDBPageNav>
+              </MDBPageItem>
+              <MDBPageItem>
+                <MDBPageNav>2</MDBPageNav>
+              </MDBPageItem>
+              <MDBPageItem>
+                <MDBPageNav>3</MDBPageNav>
+              </MDBPageItem>
+              <MDBPageItem>
+                <MDBPageNav aria-label="Previous">
+                  <span aria-hidden="true">Next</span>
+                </MDBPageNav>
+              </MDBPageItem>
+            </MDBPagination>
+          </MDBCol>
+        </MDBRow>
       </div>
     )
   }
