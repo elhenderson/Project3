@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
-import React, {Component} from 'react';
 
-export default class Secret extends Component{
+export default class Userpage extends Component{
     render(){
         return(
             <div>You can View this when you log in

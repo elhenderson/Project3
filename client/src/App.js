@@ -14,6 +14,8 @@ import Login from "./containers/Login";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
+import Userpage from './containers/Userpage';
+import Auth from './components/Auth';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route exact path="/view" component={View} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/userpage" component={Userpage}/>
         </Switch>
         <Footer />
       </div>
