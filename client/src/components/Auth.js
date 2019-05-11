@@ -1,4 +1,6 @@
 import auth0 from "auth0-js";
+import Userpage from './../containers/Userpage';
+
 /*eslint no-restricted-globals: 0 */
 const LOGIN_SUCCESS_PAGE = "/Userpage";
 const LOGIN_FAILURE_PAGE ='/home';
