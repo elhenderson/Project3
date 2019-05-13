@@ -12,7 +12,8 @@ export default function(state = initialState, action) {
             ...state,
             posts: action.payload.rows,
             total: action.payload.count,
-            limit: action.payload.limit
+            limit: action.payload.limit,
+            offset: action.payload.offset
         }
         case DELETE_POST:
             return {

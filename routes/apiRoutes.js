@@ -8,11 +8,12 @@ const User = models.User;
 
 //Post routes
 router.get("/getPosts", (req, res) => {
-    const {limit = 5, offset = 0} = req.params
+    const {limit = 5, offset = 0, count} = req.params
     Post.findAndCountAll({limit, offset})
     .then((result) => res.json({
         ...result,
-        limit
+        limit,
+        offset
     }))
 })
 
