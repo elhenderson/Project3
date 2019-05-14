@@ -9,6 +9,13 @@ function Home() {
                 // style={{ height: 200, clear: "both", paddingTop: 120, textAlign: "center" }}
                 className="container text-center">
                 HOME PAGE <br />
+                <div>
+                    <p>
+                        Hello this is where the carousel can go.
+
+                    </p>
+
+                </div>
             </div>
         </div>
 

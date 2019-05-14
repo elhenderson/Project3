@@ -29,6 +29,7 @@ class Footer extends Component {
                                     <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                 </a>
                             </div>
+                            
                         </MDBCol>
                         <MDBCol md="6">
                             <h5 className="title">Links</h5>
