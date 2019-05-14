@@ -20,10 +20,10 @@ class Post extends Component {
     const pages = total / limit
     const links = [];
     console.log(pages);
-    for(var i = 1; i < pages; i++ ) {
+    for(var i = 0; i < pages; i++ ) {
       links.push(
         <MDBPageItem key={i}>
-          <MDBPageNav>{i}</MDBPageNav>
+          <MDBPageNav>{i + 1}</MDBPageNav>
         </MDBPageItem>
       )
     }
@@ -54,15 +54,6 @@ class Post extends Component {
                 </MDBPageNav>
               </MDBPageItem>
               {this.renderPagination()}
-              {/* <MDBPageItem>
-                <MDBPageNav href="explore/1">
-                  1
-                </MDBPageNav>
-              </MDBPageItem>
-
-              <MDBPageItem>
-                <MDBPageNav>3</MDBPageNav>
-              </MDBPageItem> */}
               <MDBPageItem>
                 <MDBPageNav aria-label="Previous">
                   <span aria-hidden="true">Next</span>
