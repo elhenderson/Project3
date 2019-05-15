@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Proptypes from 'prop-types';
-import {connect} from 'react-redux';
-import {getPosts} from '../actions/postActions'
+import { connect } from 'react-redux';
+import { getPosts } from '../actions/postActions'
 import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact";
 
 class Post extends Component {
@@ -17,13 +17,13 @@ class Post extends Component {
 
   renderPagination = () => {
     console.log(this.props)
-    const {limit, total} = this.props
+    const { limit, totalk, postArray } = this.props
     console.log(this.props.posts)
     const links = [];
-    this.props.posts[0].map((post, index) => (
+    postArray.map((post, index) => (
       links.push(
         <MDBPageItem key={post.id}>
-         {index + 1}
+          <MDBPageNav>{index + 1}</MDBPageNav>
         </MDBPageItem>
       )
     ))
@@ -45,17 +45,29 @@ class Post extends Component {
   }
 
   render() {
-    const {offset} = this.props
-    console.log(offset);
-    const postsList = this.props.posts.map(post => (
-      <div key={post.id}>
-        <br/>
-        <h2>{post.title}</h2>
-        <p>{post.location}</p>
-        <img src={`data:image/jpeg;base64, ${post.photo}`} width="250" height="250"/>  
-      </div>
-    ))
-    return(
+    const {limit, total, postArray, postsWithIds} = this.props
+    // console.log(postsWithIds);
+    // var postsList = [];
+    // const offset = 5;
+    // console.log(postArray);
+    // for (let i = 0; i < postArray; i++ ) {
+    //   postsList.push(postArray)
+    //   console.log(postsList)
+    // }
+    // console.log(postsList);
+    const postsList = postArray.map((post, index) => {
+      console.log(index)
+      return (
+        <div key={post.id}>
+          <br />
+          <h2>{post.title}</h2>
+          <p>{post.location}</p>
+          <img src={`data:image/jpeg;base64, ${post.photo}`} width="250" height="250" />
+        </div>
+      )
+
+    })
+    return (
       <div>
         <h1>Posts</h1>
         {postsList}
@@ -83,10 +95,19 @@ Post.propTypes = {
   posts: Proptypes.array.isRequired
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
+  const { limit, offset, total, postArray, postsWithIds } = state.post;
   return {
-    posts: Object.values(state.post)
+    limit,
+    offset,
+    total,
+    postArray,
+    postsWithIds
   }
+  // return {
+  //   posts: Object.values(state.post)
+  // }
 }
 
-export default connect(mapStateToProps, {getPosts})(Post);
+export default connect(mapStateToProps, { getPosts })(Post);
