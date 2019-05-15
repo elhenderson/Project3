@@ -29,6 +29,7 @@
     "mdbreact": "^4.13.0",
     "mysql2": "^1.6.5",
     "react-router-dom": "^5.0.0",
+    "react-places-autocomplete": "^7.2.1",
     "redux": "^4.0.1",
     "sequelize": "^5.8.0"
   }
