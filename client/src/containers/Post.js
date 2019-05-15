@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon, MDBFormInline } from 'mdbreact';
 import Images from "../components/Images"
 import "./Post.css";
+import LocationSearchInput from "../components/LocationSearchInput"
 
 /* global google */
 
@@ -10,7 +11,7 @@ class Post extends Component {
         super(props);
         this.state = {
             title: "",
-            location: "",
+            location: {address: null, latitude: null, longitude: null,},
             category: { isPlastics: false, isWood: false, isMetal: false, isOther: true },
             rating: "0",
             notes: "",
@@ -105,6 +106,15 @@ class Post extends Component {
         });
     }
 
+    // Get the info from the LocationSearchInput component and save it to state.
+    setFormLocation = (googleLocation) => {
+        // The Google result comes back here
+        console.log(googleLocation);
+        this.setState({
+            location: googleLocation
+        })
+    }
+
     submitHandler = event => {
         event.preventDefault();
         console.log("submitting... ")
@@ -126,7 +136,6 @@ class Post extends Component {
                     <MDBCol md="10">
                         <form onSubmit={this.submitHandler}>
                             <h3 className="text-center font-weight-bold my-4" style={{ color: "#0097a7" }}>Post a trash</h3>
-
                             <MDBInput
                                 label="Title"
                                 icon="tag" iconClass="cyan-text"
@@ -141,13 +150,9 @@ class Post extends Component {
                                 onChange={this.changeHandler}
                             />
 
-                            {/* <AddressSearchBar></AddressSearchBar> */}
                             <div className="md-form form-group">
                                 <i className="fa fa-map-marker-alt cyan-text prefix"></i>
-                                <input ref={this.addressRef} type="text" className="form-control" id="address-text" aria-describedby="address-text"
-                                    name="location" value={this.state.location} onChange={this.changeHandler} placeholder="Please enter address">
-                                </input>
-                                <label htmlFor="address-text"></label>
+                                <LocationSearchInput setFormLocation={this.setFormLocation} />
                             </div>
 
                             {/* <MDBFormInline> */}
