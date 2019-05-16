@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/post" component={Post} />
             <Route exact path="/explore" component={Explore} />
             <Route exact path="/search" component={Search} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={Auth} />
           </Switch>
           <Footer />
       </Provider>
