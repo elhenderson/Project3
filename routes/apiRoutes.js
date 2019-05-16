@@ -8,31 +8,22 @@ const User = models.User;
 
 //Post routes
 router.get("/getPosts/", (req, res) => {
-    const {limit = 5, offset = 0} = req.params
     const posts = []
-    req.params.pageNum = 1;
-    const pageNum = req.params.pageNum
-    // const order = {order: [['id', 'DESC']]}
-    Post.findAndCountAll({limit, offset, posts, }, {order: [['id', 'ASC']]})
+    Post.findAndCountAll()
     .then(result => {
-        // console.log(result.rows)
         result.rows.map((post) => (
             posts.push(post)
         ))
-        // postArray.push(result.rows[0].id)
-        // console.log(posts)
         return result
     })
     .then((result) => res.json({
         ...result,
-        limit,
-        offset,
-        posts,
-        pageNum
+        posts
     }))
 })
 
 router.post("/post", (req, res) => {
+    console.log(req.body);
     Post.create(req.body)
     .then(() => res.json({success:true}))
     .catch(err => console.log(err))

@@ -16,6 +16,7 @@ import Login from "./containers/Login";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
+import Auth from './components/Auth';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
             <Route exact path="/post" component={Post} />
             <Route path="/explore" component={Explore} />
             <Route exact path="/search" component={Search} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={Auth} />
           </Switch>
           <Footer />
       </Provider>
