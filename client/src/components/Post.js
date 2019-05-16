@@ -42,8 +42,7 @@ class Post extends Component {
     })
     return (
       <div>
-        <h1>Posts</h1>
-        <JwPagination items={postArray} onChangePage={this.onChangePage}/>
+        <h1>Explore</h1>
         {postsList}
         {this.props.postArray.map(item => <div key={item.id}>{item.name}</div>)}
         <JwPagination items={postArray} onChangePage={this.onChangePage}/>
