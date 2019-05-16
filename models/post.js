@@ -11,6 +11,16 @@ module.exports = (sequelize, DataTypes) => {
         rating:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        photo: {
+            type: DataTypes.STRING, 
+            defaultValue: "Hello",
+            get: function() {
+                return JSON.parse(this.getDataValue('photo'));
+            }, 
+            set: function(val) {
+                return this.setDataValue('photo', JSON.stringify(val));
+            }
         }
     });
 
