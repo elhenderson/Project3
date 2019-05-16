@@ -1,8 +1,10 @@
 import { GET_POSTS, ADD_POST, DELETE_POST, EDIT_POST } from '../actions/types'
 
 const initialState = {
-    posts: [],
-    post: {}
+    postArray: [],
+    total: null,
+    limit: null,
+    offset: null,
 }
 
 export default function(state = initialState, action) {
@@ -10,9 +12,12 @@ export default function(state = initialState, action) {
         case GET_POSTS:
         return {
             ...state,
-            posts: action.payload.rows,
+            postArray: action.payload.rows,
             total: action.payload.count,
-            limit: action.payload.limit
+            limit: action.payload.limit,
+            offset: action.payload.offset,
+            postsWithIds: action.payload.posts,
+            pageNum: action.payload.pageNum
         }
         case DELETE_POST:
             return {

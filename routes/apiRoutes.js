@@ -7,12 +7,28 @@ const User = models.User;
 
 
 //Post routes
-router.get("/getPosts", (req, res) => {
+router.get("/getPosts/", (req, res) => {
     const {limit = 5, offset = 0} = req.params
-    Post.findAndCountAll({limit, offset})
+    const posts = []
+    req.params.pageNum = 1;
+    const pageNum = req.params.pageNum
+    // const order = {order: [['id', 'DESC']]}
+    Post.findAndCountAll({limit, offset, posts, }, {order: [['id', 'ASC']]})
+    .then(result => {
+        // console.log(result.rows)
+        result.rows.map((post) => (
+            posts.push(post)
+        ))
+        // postArray.push(result.rows[0].id)
+        // console.log(posts)
+        return result
+    })
     .then((result) => res.json({
         ...result,
-        limit
+        limit,
+        offset,
+        posts,
+        pageNum
     }))
 })
 
