@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CarouselPage from "../components/carousel";
 import Jumbotron from "../components/Jumbotron"
 
 function Home() {
@@ -10,10 +11,7 @@ function Home() {
                 className="container text-center">
                 HOME PAGE <br />
                 <div>
-                    <p>
-                        Hello this is where the carousel can go.
-
-                    </p>
+                    <CarouselPage/>
 
                 </div>
             </div>
