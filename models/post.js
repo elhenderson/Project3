@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         rating:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        photo: {
+            type: DataTypes.TEXT('long'),
+            allowNull: false
         }
     });
 

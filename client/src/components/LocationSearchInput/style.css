@@ -1,0 +1,13 @@
+.suggestion {
+    background-color: #eee;
+    color: #008799;
+    font-size: 80%;
+    padding: 0.25em 0.7em;
+}
+
+.md-form .prefix~.autocomplete-dropdown-container {
+    width: calc(100% - 2.5rem);
+    margin-left: 2.5rem;
+    position: absolute;
+    z-index: 10;
+}
