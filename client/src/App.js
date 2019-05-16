@@ -36,7 +36,7 @@ function App() {
       </Provider>
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;
