@@ -13,8 +13,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         photo: {
-            type: DataTypes.TEXT('long'),
-            allowNull: false
+            type: DataTypes.STRING, 
+            get: function() {
+                return JSON.parse(this.getDataValue('myArrayField'));
+            }, 
+            set: function(val) {
+                return this.setDataValue('myArrayField', JSON.stringify(val));
+            }
         }
     });
 
