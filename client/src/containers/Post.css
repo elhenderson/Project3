@@ -1,0 +1,29 @@
+/* xinput[type=radio] {
+    border: 0px;
+    width: 30%;
+    height: 2em;
+} */
+
+.form-check {
+    padding-left: 0.1em;
+}
+
+.form-check-input {
+    margin: 0 0em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.form-check-label {
+    margin-left: 2em;
+    /* margin-right: 1.5em; */
+}
+
+.custom-file-label {
+    color: #00bcd4;
+}
+
+.custom-file-label::after {
+    background-color: #00bcd4;
+    color: white;
+}
