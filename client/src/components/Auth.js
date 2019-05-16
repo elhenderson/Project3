@@ -1,5 +1,5 @@
 import auth0 from "auth0-js";
-//import explore from '../components/explore';
+import Explore from '../containers/Explore'
 
 /*eslint no-restricted-globals: 0 */
 const LOGIN_SUCCESS_PAGE = "/Userpage";
