@@ -1,10 +1,7 @@
 import { GET_POSTS, ADD_POST, DELETE_POST, EDIT_POST } from '../actions/types'
 
 const initialState = {
-    postArray: [],
-    total: null,
-    limit: null,
-    offset: null,
+    postArray: []
 }
 
 export default function(state = initialState, action) {
@@ -12,11 +9,7 @@ export default function(state = initialState, action) {
         case GET_POSTS:
         return {
             ...state,
-            postArray: action.payload.rows,
-            total: action.payload.count,
-            limit: action.payload.limit,
-            offset: action.payload.offset,
-            postsWithIds: action.payload.posts
+            postArray: action.payload.rows
         }
         case DELETE_POST:
             return {

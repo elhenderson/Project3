@@ -2,62 +2,34 @@ import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPosts } from '../actions/postActions'
-import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact";
+import JwPagination from 'jw-react-pagination'
+
 
 class Post extends Component {
 
-  constructor() {
-    super()
-    this.renderPagination = this.renderPagination.bind(this);
+
+  constructor(props) {
+    super(props)
+    this.onChangePage = this.onChangePage.bind(this);
+    this.state = {
+      pageOfItems: []
+    };
   }
 
   componentWillMount() {
     this.props.getPosts();
   }
 
-  renderPagination = () => {
-    console.log(this.props)
-    const { limit, total, postArray } = this.props
-    console.log(this.props.posts)
-    const links = [];
-    postArray.map((post, index) => (
-      links.push(
-        <MDBPageItem key={post.id}>
-          <MDBPageNav>{index + 1}</MDBPageNav>
-        </MDBPageItem>
-      )
-    ))
-    console.log(links);
-    return links;
-    // const pages = Math.ceil(total / limit)
-
-    // console.log(pages);
-
-    // const pageGenerator = 
-    // for(var i = 0; i < pages; i++ ) {
-    //   links.push(
-    //     <MDBPageItem key={i}>
-    //       <MDBPageNav>{i + 1}</MDBPageNav>
-    //     </MDBPageItem>
-    //   )
-    // }
-    // return links;
+  onChangePage(pageOfItems) {
+    this.setState({pageOfItems});
   }
 
+
   render() {
-    const {limit, total, postArray, postsWithIds} = this.props
-    // console.log(postsWithIds);
-    // var postsList = [];
-    // const offset = 5;
-    // console.log(postArray);
-    // for (let i = 0; i < postArray; i++ ) {
-    //   postsList.push(postArray)
-    //   console.log(postsList)
-    // }
-    // console.log(postsList);
-    const postsList = postArray.map((post, index) => {
-      console.log(index)
-      console.log(post);
+    window.scrollTo(0,0)
+    const {postArray} = this.props
+    
+    const postsList = this.state.pageOfItems.map((post, index) => {
       return (
         <div key={post.id}>
           <br />
@@ -70,22 +42,10 @@ class Post extends Component {
     })
     return (
       <div>
-        <h1>Posts</h1>
+        <h1>Explore</h1>
         {postsList}
-        <MDBRow>
-          <MDBCol>
-            <MDBPagination className="mb-5" size="lg">
-              <MDBPageItem>
-              </MDBPageItem>
-
-
-
-              {this.renderPagination()}
-              <MDBPageItem>
-              </MDBPageItem>
-            </MDBPagination>
-          </MDBCol>
-        </MDBRow>
+        {this.props.postArray.map(item => <div key={item.id}>{item.name}</div>)}
+        <JwPagination items={postArray} onChangePage={this.onChangePage}/>
       </div>
     )
   }
@@ -96,19 +56,11 @@ Post.propTypes = {
   posts: Proptypes.array.isRequired
 }
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-  const { limit, offset, total, postArray, postsWithIds } = state.post;
+const mapStateToProps = (state) => {
+  const {postArray} = state.post;
   return {
-    limit,
-    offset,
-    total,
-    postArray,
-    postsWithIds
+    postArray
   }
-  // return {
-  //   posts: Object.values(state.post)
-  // }
 }
 
 export default connect(mapStateToProps, { getPosts })(Post);

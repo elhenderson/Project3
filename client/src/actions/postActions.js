@@ -3,10 +3,10 @@ import {GET_POSTS, ADD_POST, DELETE_POST, EDIT_POST} from './types';
 
 export const getPosts = () => dispatch => {
     axios
-    .get('/api/getPosts')
+    .get(`/api/getPosts/`)
     .then(posts => dispatch({
         type: GET_POSTS,
-        payload: posts.data
+        payload: posts.data, 
     }))
 }
 
