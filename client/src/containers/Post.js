@@ -124,8 +124,12 @@ class Post extends Component {
         console.log(data)
         fetch('/api/post', {
             method: 'POST',
-            body: data,
-        });
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
     }
 
     render() {

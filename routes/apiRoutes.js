@@ -31,6 +31,7 @@ router.get("/getPosts/", (req, res) => {
 })
 
 router.post("/post", (req, res) => {
+    console.log(req.body);
     Post.create(req.body)
     .then(() => res.json({success:true}))
     .catch(err => console.log(err))
