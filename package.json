@@ -36,5 +36,13 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.8.0"
+  },
+  "engines": {
+    "node": "^10.15.3",
+    "npm": "^6.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elhenderson/project3.git"
   }
 }
