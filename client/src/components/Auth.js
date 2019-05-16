@@ -1,12 +1,14 @@
 import auth0 from "auth0-js";
+//import explore from '../components/explore';
+
 /*eslint no-restricted-globals: 0 */
-const LOGIN_SUCCESS_PAGE = "/secret";
+const LOGIN_SUCCESS_PAGE = "/Userpage";
 const LOGIN_FAILURE_PAGE ='/home';
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "dev-y0g40tq6.auth0.com",
     clientID: "aGAyCECea05TdRTEhRXRJhhSmXVWPXz7",
-    redirectUri: "http://localhost:3000/callback",
+    redirectUri: "http://localhost:3000/explore",
     //audience: 'https://dev-y0g40tq6.auth0.com/userinfo',
     responseType: "token id_token",
     scope: "openid"

@@ -16,6 +16,7 @@ import Login from "./containers/Login";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
+import Auth from './components/Auth';
 
 function App() {
   return (
