@@ -6,7 +6,7 @@ function Jumbotron() {
     "backgroundImage": "url(https://i.dailymail.co.uk/i/pix/2017/05/29/10/40E7DF2900000578-0-image-a-6_1496050595356.jpg)",
     "backgroundSize": "cover",
     "backgroundPosition": "center",
-    "backgroundRepeat": "no-repeat",
+    "backgroundRepeat": "no-repeat"
     // "background-attachment": "fixed",
   }
 
