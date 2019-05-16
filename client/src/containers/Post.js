@@ -120,7 +120,7 @@ class Post extends Component {
         console.log("submitting... ")
         console.log(this.state);
 
-        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating};
+        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls};
         console.log(data)
         fetch('/api/post', {
             method: 'POST',

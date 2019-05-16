@@ -14,11 +14,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         photo: {
             type: DataTypes.STRING, 
+            defaultValue: "Hello",
             get: function() {
-                return JSON.parse(this.getDataValue('myArrayField'));
+                return JSON.parse(this.getDataValue('photo'));
             }, 
             set: function(val) {
-                return this.setDataValue('myArrayField', JSON.stringify(val));
+                return this.setDataValue('photo', JSON.stringify(val));
             }
         }
     });
