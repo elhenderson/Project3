@@ -17,7 +17,7 @@ class Post extends Component {
 
   renderPagination = () => {
     console.log(this.props)
-    const { limit, totalk, postArray } = this.props
+    const { limit, total, postArray } = this.props
     console.log(this.props.posts)
     const links = [];
     postArray.map((post, index) => (
@@ -57,12 +57,13 @@ class Post extends Component {
     // console.log(postsList);
     const postsList = postArray.map((post, index) => {
       console.log(index)
+      console.log(post);
       return (
         <div key={post.id}>
           <br />
           <h2>{post.title}</h2>
           <p>{post.location}</p>
-          <img src={`data:image/jpeg;base64, ${post.photo}`} width="250" height="250" />
+          <img src={`${post.photo[0]}`} width="250" height="250" />        
         </div>
       )
 
