@@ -1,5 +1,5 @@
 import auth0 from "auth0-js";
-import Userpage from './../containers/Userpage';
+//import explore from '../components/explore';
 
 /*eslint no-restricted-globals: 0 */
 const LOGIN_SUCCESS_PAGE = "/Userpage";
@@ -8,7 +8,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "dev-y0g40tq6.auth0.com",
     clientID: "aGAyCECea05TdRTEhRXRJhhSmXVWPXz7",
-    redirectUri: "http://localhost:3000/Userpage",
+    redirectUri: "http://localhost:3000/explore",
     //audience: 'https://dev-y0g40tq6.auth0.com/userinfo',
     responseType: "token id_token",
     scope: "openid"
