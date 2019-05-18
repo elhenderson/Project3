@@ -23,12 +23,12 @@ class SubmitForm extends Component {
         };
     }
 
-    // manual way 1
-    addressRef = React.createRef();
-    componentDidMount() {
-        console.log(this.addressRef);
-        new window.google.maps.places.Autocomplete(this.addressRef.current);
-    }
+    // // manual way 1
+    // addressRef = React.createRef();
+    // componentDidMount() {
+    //     console.log(this.addressRef);
+    //     new window.google.maps.places.Autocomplete(this.addressRef.current);
+    // }
 
     // // manual way 2
     // addressRef = React.createRef();
@@ -108,19 +108,25 @@ class SubmitForm extends Component {
 
     // Get the info from the LocationSearchInput component and save it to state.
     setFormLocation = (googleLocation) => {
-        // The Google result comes back here
-        console.log(googleLocation);
-        this.setState({
-            location: googleLocation
-        })
+        if (typeof googleLocation == 'string' || googleLocation instanceof String) {
+            console.log("not google location result", googleLocation);
+            this.setState({
+                location: {address: googleLocation, latitude: null, longitude: null,}
+            })
+        } else {
+            // The Google result comes back here
+            console.log("yes google location result");
+            console.log(googleLocation);
+            this.setState({
+                location: googleLocation
+            })
+        }
     }
 
     submitHandler = event => {
         event.preventDefault();
-        console.log("submitting... ");
-        console.log(this.state);
-
         const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls, notes: this.state.notes};
+        console.log("submitHandler submitting data: ");
         console.log(data)
         fetch('/api/post', {
             method: 'POST',

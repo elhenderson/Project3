@@ -19,13 +19,13 @@ class OnePost extends Component {
                 </div>
 
                 <span className="block-example border border-info px-0 py-1">
-                    <MDBIcon icon="angle-up" className="px-2" />
+                    <MDBIcon icon="angle-down" className="px-2" />
                 </span>
                 <span className="block-example border-top border-bottom border-info px-3 py-1">
-                    3
+                    {this.props.onePost.rating}
                 </span>
                 <span className="block-example border border-info px-0 py-1">
-                    <MDBIcon icon="angle-down" className="px-2" />
+                    <MDBIcon icon="angle-up" className="px-2" />
                 </span>
                 <MDBBtn color="cyan" size="sm" className="z-depth-0">
                     <MDBIcon icon="edit" /> Edit

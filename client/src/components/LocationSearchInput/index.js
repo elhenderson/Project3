@@ -9,7 +9,8 @@ class LocationSearchInput extends React.Component {
     }
 
     handleChange = (address) => {
-        this.setState({ address })
+        this.setState({ address });
+        this.props.setFormLocation(address);
     }
 
     // When the user selects an autocomplete suggestion...
