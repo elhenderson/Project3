@@ -6,7 +6,7 @@ function Jumbotron() {
     "backgroundImage": "url(https://i.dailymail.co.uk/i/pix/2017/05/29/10/40E7DF2900000578-0-image-a-6_1496050595356.jpg)",
     "backgroundSize": "cover",
     "backgroundPosition": "center",
-    "backgroundRepeat": "no-repeat",
+    "backgroundRepeat": "no-repeat"
     // "background-attachment": "fixed",
   }
 
@@ -25,7 +25,7 @@ function Jumbotron() {
             <p className="lead">
               An app that will help people to find and clean up trash in community areas.
             </p>
-            <MDBBtn href="/view" className="aqua-gradient"> View </MDBBtn>
+            <MDBBtn href="/explore" className="aqua-gradient"> Explore </MDBBtn>
             <MDBBtn href="/post" className="aqua-gradient"> Post </MDBBtn>
             <MDBBtn href="/about" className="aqua-gradient"> Learn More </MDBBtn>
           </MDBJumbotron>

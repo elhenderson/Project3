@@ -27,10 +27,22 @@
     "google-auth-library": "^3.1.2",
     "google-map-react": "^1.1.4",
     "if-env": "^1.0.4",
+    "jw-react-pagination": "^1.1.0",
     "mdbreact": "^4.13.0",
     "mysql2": "^1.6.5",
+    "react-places-autocomplete": "^7.2.1",
+    "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sequelize": "^5.8.0"
+  },
+  "engines": {
+    "node": "^10.15.3",
+    "npm": "^6.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elhenderson/project3.git"
   }
 }

@@ -1,21 +1,25 @@
 import auth0 from "auth0-js";
-//import explore from '../components/explore';
-
+import Explore from '../containers/Explore'
+import React, { Component } from 'react';
 /*eslint no-restricted-globals: 0 */
 const LOGIN_SUCCESS_PAGE = "/Userpage";
 const LOGIN_FAILURE_PAGE ='/home';
-export default class Auth {
+class Auth extends Component {
+
   auth0 = new auth0.WebAuth({
     domain: "dev-y0g40tq6.auth0.com",
     clientID: "aGAyCECea05TdRTEhRXRJhhSmXVWPXz7",
     redirectUri: "http://localhost:3000/explore",
-    //audience: 'https://dev-y0g40tq6.auth0.com/userinfo',
     responseType: "token id_token",
     scope: "openid"
   });
+  
 
   constructor() {
+    super()
     this.login = this.login.bind(this);
+    this.handleAuthentication = this.handleAuthentication.bind(this);
+    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
   login() {
     this.auth0.authorize();
@@ -42,4 +46,16 @@ isAuthenticated(){
     let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
     return new Date().getTime() < expiresAt;
 }
+
+render(){
+  const auth = new Auth();
+  return(
+
+  
+    auth.login()
+
+  );
 }
+}
+
+export default Auth;

@@ -7,12 +7,23 @@ const User = models.User;
 
 
 //Post routes
-router.get("/getPosts", (req, res) => {
-    Post.findAll()
-    .then((result) => res.json(result));
+router.get("/getPosts/", (req, res) => {
+    const posts = []
+    Post.findAndCountAll()
+    .then(result => {
+        result.rows.map((post) => (
+            posts.push(post)
+        ))
+        return result
+    })
+    .then((result) => res.json({
+        ...result,
+        posts
+    }))
 })
 
 router.post("/post", (req, res) => {
+    console.log(req.body);
     Post.create(req.body)
     .then(() => res.json({success:true}))
     .catch(err => console.log(err))
