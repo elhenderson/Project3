@@ -22,7 +22,7 @@ import Auth from './components/Auth';
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="container" style={{display: "flex", flexDirection: "column", justifyItems: "center", width: "100%"}}>
       <Provider store={store}>
         <Navbar />
           <Switch>
@@ -38,7 +38,7 @@ function App() {
       </Provider>
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;

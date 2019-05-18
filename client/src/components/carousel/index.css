@@ -1,5 +1,18 @@
 .carousel {
     height: 525px;
-    width: 1000px
+    width: 1000px;
+    display: flex;
+}
 
+@media (min-width: 575px) {
+    .carousel {
+        width: 550px;
+        height: 100%
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        width: 750px
+    }
 }

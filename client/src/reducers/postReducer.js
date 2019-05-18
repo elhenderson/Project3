@@ -13,11 +13,7 @@ export default function(state = initialState, action) {
         case GET_POSTS:
         return {
             ...state,
-            postArray: action.payload.rows,
-            total: action.payload.count,
-            limit: action.payload.limit,
-            offset: action.payload.offset,
-            postsWithIds: action.payload.posts
+            postArray: action.payload.rows
         }
         case GET_ONE_POST:
         return {
