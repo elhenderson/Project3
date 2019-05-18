@@ -117,10 +117,10 @@ class SubmitForm extends Component {
 
     submitHandler = event => {
         event.preventDefault();
-        console.log("submitting... ")
+        console.log("submitting... ");
         console.log(this.state);
 
-        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls};
+        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls, notes: this.state.notes};
         console.log(data)
         fetch('/api/post', {
             method: 'POST',

@@ -30,7 +30,7 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/submit" component={SubmitForm} />
             <Route exact path="/explore" component={Explore} />
-            <Route exact path="/explore/1" component={ExploreOne} />
+            <Route exact path="/explore/:id" component={ExploreOne} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/login" component={Auth} />
           </Switch>

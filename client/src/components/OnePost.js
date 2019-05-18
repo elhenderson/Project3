@@ -7,7 +7,7 @@ import Images from '../components/Images'
 
 class OnePost extends Component {
     componentWillMount() {
-        this.props.getOnePost(3);
+        this.props.getOnePost(this.props.onepostid);
     }
     render() {
         return (
@@ -48,8 +48,8 @@ OnePost.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("mapStateToProps")
-    console.log(state);
+    // console.log("mapStateToProps")
+    // console.log(state);
     return {
         onePost: state.post.onePost
     }
