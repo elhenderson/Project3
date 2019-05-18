@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        notes: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
         photo: {
             type: DataTypes.STRING, 
             defaultValue: "Hello",
