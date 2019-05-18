@@ -4,12 +4,12 @@ import Jumbotron from "../components/Jumbotron"
 
 function Home() {
     return (
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", "margin": 0, "width": "100%", "textAlign": "center"}}>
             <Jumbotron />
             <div
-                // style={{ height: 200, clear: "both", paddingTop: 120, textAlign: "center" }}
+                style={{margin: 0, "width": "100%", "textAlign": "center"}}
                 className="container text-center">
-                HOME PAGE <br />
+                 <br />
                 <div>
                     <CarouselPage />
 
