@@ -29,7 +29,7 @@ function Jumbotron() {
               An app that will help people to find and clean up trash in community areas.
             </p>
             <MDBBtn href="/explore" className="aqua-gradient"> Explore </MDBBtn>
-            <MDBBtn href="/post" className="aqua-gradient"> Post </MDBBtn>
+            <MDBBtn href="/submit" className="aqua-gradient"> Submit Post </MDBBtn>
             <MDBBtn href="/about" className="aqua-gradient"> Learn More </MDBBtn>
           </MDBJumbotron>
         </MDBCol>
