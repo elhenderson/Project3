@@ -22,7 +22,7 @@ import Auth from './components/Auth';
 function App() {
   return (
     <Router>
-      <div className="container-fluid" style={{display: "flex", flexDirection: "column", justifyItems: "center", width: "100%", padding: 0}}>
+      <div className="container-fluid" style={{display: "flex", flexDirection: "column", justifyItems: "center", padding: 0}}>
       <Provider store={store}>
         <Navbar />
           <Switch>
