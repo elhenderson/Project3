@@ -4,7 +4,7 @@ import Jumbotron from "../components/Jumbotron"
 
 function Home() {
     return (
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+        <div class="d-flex flex-column">
             <Jumbotron />
             <div
                 // style={{ height: 200, clear: "both", paddingTop: 120, textAlign: "center" }}

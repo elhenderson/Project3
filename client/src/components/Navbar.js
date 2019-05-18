@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
+
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light cyan ">
+    <nav className="navbar navbar-expand-lg navbar-light cyan d-flex flex-column ">
         <a className="navbar-brand" href="/">GreenSpace!</a>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
