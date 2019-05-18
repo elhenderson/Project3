@@ -30,6 +30,18 @@ router.get("/getPosts/", (req, res) => {
     }))
 })
 
+// single item
+router.get("/getPosts/:id", (req, res) => {
+    console.log("----params=", req.params);
+    Post.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then((result) => res.json(result))
+    .catch(err => console.log(err))
+})
+
 router.post("/post", (req, res) => {
     console.log(req.body);
     Post.create(req.body)

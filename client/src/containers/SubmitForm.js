@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon, MDBFormInline } from 'mdbreact';
 import Images from "../components/Images"
-import "./Post.css";
+import "./SubmitForm.css";
 import LocationSearchInput from "../components/LocationSearchInput"
 
 /* global google */
 
-class Post extends Component {
+class SubmitForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -234,4 +234,4 @@ class Post extends Component {
     }
 }
 
-export default Post;
+export default SubmitForm;

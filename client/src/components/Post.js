@@ -61,7 +61,7 @@ class Post extends Component {
       return (
         <div key={post.id}>
           <br />
-          <h2>{post.title}</h2>
+          <a href={"/explore/" + post.id}><h2>{post.title}</h2></a>
           <p>{post.location}</p>
           <img src={`${post.photo[0]}`} width="250" height="250" />        
         </div>
