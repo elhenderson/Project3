@@ -5,7 +5,7 @@ import "./style.css"
 class LocationSearchInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { address: null, latitude: null, longitude: null }
+        this.state = { address: "", latitude: null, longitude: null }
     }
 
     handleChange = (address) => {
