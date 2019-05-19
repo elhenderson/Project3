@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getOnePost } from '../actions/postActions'
 import { MDBContainer, MDBCol, MDBRow, MDBIcon, MDBBtn } from "mdbreact"
 import Images from '../components/Images'
+import LeafletMap from '../components/LeafletMap'
 
 class OnePost extends Component {
     componentWillMount() {
@@ -36,7 +37,12 @@ class OnePost extends Component {
 
                 <Images imgurls={this.props.onePost.photo} imgUploading={null}></Images>
 
-                <p>{this.props.onePost.notes}</p>
+                <MDBContainer className="cyan lighten-5">
+                    <span className="font-weight-bold" >Notes</span>
+                    <p>{this.props.onePost.notes}</p>
+                </MDBContainer>
+
+                <LeafletMap></LeafletMap>
             </MDBContainer>
         );
     }
