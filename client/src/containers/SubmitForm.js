@@ -125,7 +125,14 @@ class SubmitForm extends Component {
 
     submitHandler = event => {
         event.preventDefault();
-        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls, notes: this.state.notes};
+        const data = {
+            title: this.state.title,
+            location: this.state.location.address,
+            pluscode: this.state.location.pluscode,
+            rating: this.state.rating,
+            photo: this.state.imgurls,
+            notes: this.state.notes,
+        }
         console.log("submitHandler submitting data: ");
         console.log(data)
         fetch('/api/post', {
@@ -136,6 +143,10 @@ class SubmitForm extends Component {
             body: JSON.stringify(data),
         })
         .then(response => response.json())
+        .then(data => {
+            console.log("submit returns:");
+            console.log(data);
+        })
     }
 
     render() {

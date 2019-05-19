@@ -37,8 +37,8 @@ router.get("/getPosts/:id", (req, res) => {
 router.post("/post", (req, res) => {
     console.log(req.body);
     Post.create(req.body)
-    .then(() => res.json({success:true}))
-    .catch(err => console.log(err))
+    .then((post) => res.json({success:true, data: post}))
+    .catch(err => res.json({success:false, error: err}))
 })
 
 router.delete("/deletePost/:id", (req, res) => {
