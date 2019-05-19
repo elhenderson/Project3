@@ -11,8 +11,7 @@ rcw.setAttribute('style', 'display:block');
 }
 render() {
 return (
-<div className="">
-ABOUT PAGE
+<div className="container">
 <div id="recollect"></div>
 </div>
 );

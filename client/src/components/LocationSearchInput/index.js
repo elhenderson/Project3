@@ -25,8 +25,14 @@ class LocationSearchInput extends React.Component {
 
         geocodeByAddress(address)
             .then(res => {
-                this.setState({pluscode: res[0].plus_code.global_code});
-                return getLatLng(res[0]);
+                console.log("google autocomple address:");
+                console.log(res);
+                if ('plus_code' in res[0]) {
+                    this.setState({pluscode: res[0].plus_code.global_code});
+                    return getLatLng(res[0]);
+                } else {
+                    // TODO: handle APPROXIMATE location_type
+                }
             })
             .then(({ lat, lng }) => {
                 this.setState({
