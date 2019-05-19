@@ -1,0 +1,8 @@
+.navbar-dark .navbar-brand, .navbar-brand:hover {
+    color: #f0f4c3;
+    font-weight: bold;
+}
+.navbar.navbar-dark .navbar-nav  .nav-item .nav-link {
+    color: #f0f4c3;
+    font-weight: bold;
+}
