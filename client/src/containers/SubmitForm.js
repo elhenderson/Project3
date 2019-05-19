@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon, MDBFormInline } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon, MDBFormInline, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import Images from "../components/Images"
 import "./SubmitForm.css";
 import LocationSearchInput from "../components/LocationSearchInput"
@@ -20,7 +20,10 @@ class SubmitForm extends Component {
             // imgurls: ["https://images-na.ssl-images-amazon.com/images/I/61uHDTvqDLL._SX425_.jpg", "https://3vnqw32fta3x1ysij926ljs3-wpengine.netdna-ssl.com/wp-content/uploads/2003/03/Talking-Trash-576x360.jpg",
             //     "https://i.loli.net/2019/05/14/5cda4dc0cf76278317.jpg",
             // ]
+            modalIsOpen: false,
+            submitSuccess: false,
         };
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     // // manual way 1
@@ -146,7 +149,23 @@ class SubmitForm extends Component {
         .then(data => {
             console.log("submit returns:");
             console.log(data);
+            if (data.success) {
+                this.setState({
+                    submitSuccess: true
+                });
+            } else {
+                this.setState({
+                    submitSuccess: false
+                });
+            }
+            this.toggleModal();
         })
+    }
+
+    toggleModal = () => {
+        this.setState({
+            modalIsOpen: !this.state.modalIsOpen,
+        });
     }
 
     render() {
@@ -245,6 +264,22 @@ class SubmitForm extends Component {
                     </MDBCol>
                 </MDBRow>
                 <br />
+
+                <MDBModal isOpen={this.state.modalIsOpen} toggle={this.toggleModal} size="md">
+                    <MDBModalHeader className="cyan text-white" toggle={this.toggleModal} > Thank You! </MDBModalHeader>
+                    <MDBModalBody className="text-center">
+                        {this.state.submitSuccess ? 
+                            <img alt="thank-you" width="90%" src="https://i.pinimg.com/originals/bf/e2/d8/bfe2d8aff690b4b94c035aa357e865d6.jpg"></img>
+                            : 
+                            <img alt="submission-fail" width="90%" src="https://content.spiceworksstatic.com/service.community/p/post_images/0000275711/59e5cc26/attached_image/Screen_Shot_2017-10-17_at_10.20.43.png"></img>
+                            }
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                        <MDBBtn color="cyan" href="/" >Home</MDBBtn>
+                        <MDBBtn color="cyan" href="/explore">Explore</MDBBtn>
+                        <MDBBtn color="cyan" onClick={this.toggleModal}>Close</MDBBtn>
+                    </MDBModalFooter>
+                </MDBModal>
 
             </MDBContainer>
         );
