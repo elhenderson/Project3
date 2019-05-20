@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light cyan d-flex flex-column ">
+    <nav className="navbar navbar-expand-lg navbar-light cyan d-flex flex-column">
         <a className="navbar-brand" href="/">GreenSpace!</a>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -15,11 +15,11 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mr-auto">
-                <li className={ window.location.pathname === "/past" ? "nav-item active" : "nav-item" }>
-                    <a className="nav-link" href="/post"> Post </a>
+                <li className={ window.location.pathname === "/submit" ? "nav-item active" : "nav-item" }>
+                    <a className="nav-link" href="/submit"> Submit </a>
                 </li>
-                <li className={ window.location.pathname === "/view" ? "nav-item active" : "nav-item" }>
-                    <a className="nav-link" href="/view"> View </a>
+                <li className={ window.location.pathname === "/explore" ? "nav-item active" : "nav-item" }>
+                    <a className="nav-link" href="/explore"> Explore </a>
                 </li>
                 <li className={ window.location.pathname === "/search" ? "nav-item active" : "nav-item" }>
                     <a className="nav-link" href="/search"> Search </a>

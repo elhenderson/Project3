@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon, MDBFormInline } from 'mdbreact';
 import Images from "../components/Images"
-import "./Post.css";
+import "./SubmitForm.css";
 import LocationSearchInput from "../components/LocationSearchInput"
 
 /* global google */
 
-class Post extends Component {
+class SubmitForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -117,10 +117,10 @@ class Post extends Component {
 
     submitHandler = event => {
         event.preventDefault();
-        console.log("submitting... ")
+        console.log("submitting... ");
         console.log(this.state);
 
-        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls};
+        const data = {title: this.state.title, location: this.state.location.address, rating: this.state.rating, photo: this.state.imgurls, notes: this.state.notes};
         console.log(data)
         fetch('/api/post', {
             method: 'POST',
@@ -234,4 +234,4 @@ class Post extends Component {
     }
 }
 
-export default Post;
+export default SubmitForm;

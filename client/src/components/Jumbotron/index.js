@@ -6,7 +6,10 @@ function Jumbotron() {
     "backgroundImage": "url(https://i.dailymail.co.uk/i/pix/2017/05/29/10/40E7DF2900000578-0-image-a-6_1496050595356.jpg)",
     "backgroundSize": "cover",
     "backgroundPosition": "center",
-    "backgroundRepeat": "no-repeat"
+    "backgroundRepeat": "no-repeat",
+    "width": "100%",
+    "margin" : 0,
+    
     // "background-attachment": "fixed",
   }
 
@@ -17,9 +20,9 @@ function Jumbotron() {
     // <h2 className="display-5">Save More Green Space!</h2>
     // <a className="btn aqua-gradient btn-lg" href="/about" role="button">Learn more</a>
     // </div>
-    <MDBContainer className="mt-0 text-center px-0">
-      <MDBRow>
-        <MDBCol className="text-white">
+    <MDBContainer className="mt-0 text-center px-0 justify-content-center" style={{"width": "100%", "margin": "0"}}>
+      <MDBRow style={{"width": "100%", "display": "flex"}}>
+        <MDBCol className="text-white" style={{"width": "100%", "display": "flex", "justifyContent": "center", "margin": 0}}>
           <MDBJumbotron style={jbStyle}>
             <h2 className="display-5">Save More Green Space!</h2>
             <p className="lead">

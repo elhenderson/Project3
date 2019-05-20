@@ -4,12 +4,12 @@ import Jumbotron from "../components/Jumbotron"
 
 function Home() {
     return (
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column justify-content-center">
             <Jumbotron />
             <div
-                // style={{ height: 200, clear: "both", paddingTop: 120, textAlign: "center" }}
+                style={{margin: 0, "width": "100%", "textAlign": "center"}}
                 className="container text-center">
-                HOME PAGE <br />
+                 <br />
                 <div>
                     <CarouselPage />
 
