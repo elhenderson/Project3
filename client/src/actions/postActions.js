@@ -37,10 +37,10 @@ export const editPost = id => {
     }))
 }
 
-export const deletePost = id => {
+export const deletePost = id => dispatch => {
     axios
-    .delete(`/deletePost/${id}`)
-    .then(res => ({
+    .delete(`/api/deletePost/${id}`)
+    .then(res => dispatch({
         type: DELETE_POST,
         payload: id
     }))

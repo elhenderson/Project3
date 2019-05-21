@@ -1,15 +1,68 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getOnePost } from '../actions/postActions'
-import { MDBContainer, MDBCol, MDBRow, MDBIcon, MDBBtn } from "mdbreact"
+import { getOnePost, deletePost } from '../actions/postActions'
+import { MDBContainer, MDBCol, MDBRow, MDBIcon, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody, MDBModalFooter } from "mdbreact"
 import Images from '../components/Images'
 import LeafletMap from '../components/LeafletMap'
 
 class OnePost extends Component {
+    constructor(props) {
+        super(props)
+        this.toggleModal = this.toggleModal.bind(this);
+
+        this.state = {
+            modalIsOpen: false,
+            submitSuccess: true
+        }
+    }
     componentWillMount() {
         this.props.getOnePost(this.props.onepostid);
     }
+
+    submitHandler = event => {
+        event.preventDefault();
+        const data = {
+            title: this.state.title,
+            location: this.state.location.address,
+            pluscode: this.state.location.pluscode,
+            rating: this.state.rating,
+            photo: this.state.imgurls,
+            notes: this.state.notes,
+        }
+        console.log("submitHandler submitting data: ");
+        console.log(data)
+        fetch('/api/post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("submit returns:");
+            console.log(data);
+            if (data.success) {
+                this.setState({
+                    submitSuccess: true
+                });
+            } else {
+                this.setState({
+                    submitSuccess: false
+                });
+            }
+            this.toggleModal();
+        })
+    }
+
+    toggleModal = () => {
+        this.props.deletePost(this.props.onepostid)
+        this.setState({
+            modalIsOpen: !this.state.modalIsOpen,
+        });
+    }
+
     render() {
         return (
             <MDBContainer className="my-3">
@@ -31,7 +84,7 @@ class OnePost extends Component {
                 <MDBBtn color="cyan" size="sm" className="z-depth-0">
                     <MDBIcon icon="edit" /> Edit
                 </MDBBtn>
-                <MDBBtn color="yellow" size="sm" className="z-depth-0">
+                <MDBBtn color="yellow" size="sm" className="z-depth-0" onClick={() => this.toggleModal()}>
                     <MDBIcon icon="times" /> Delete
                 </MDBBtn>
 
@@ -43,14 +96,31 @@ class OnePost extends Component {
                 </MDBContainer>
 
                 <LeafletMap></LeafletMap>
+
+                <MDBModal isOpen={this.state.modalIsOpen} toggle={this.toggleModal} size="md">
+                    <MDBModalHeader className="cyan text-white" toggle={this.toggleModal} > Thank You! </MDBModalHeader>
+                    <MDBModalBody className="text-center">
+                        {this.state.submitSuccess ? 
+                            <img alt="thank-you" width="90%" src="https://i.pinimg.com/originals/bf/e2/d8/bfe2d8aff690b4b94c035aa357e865d6.jpg"></img>
+                            : 
+                            <img alt="submission-fail" width="90%" src="https://content.spiceworksstatic.com/service.community/p/post_images/0000275711/59e5cc26/attached_image/Screen_Shot_2017-10-17_at_10.20.43.png"></img>
+                            }
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                        <MDBBtn color="cyan" href="/" >Home</MDBBtn>
+                        <MDBBtn color="cyan" href="/explore">Explore</MDBBtn>
+                    </MDBModalFooter>
+                </MDBModal>
             </MDBContainer>
+            
         );
     }
 }
 
 OnePost.propTypes = {
     getOnePost: Proptypes.func.isRequired,
-    onePost: Proptypes.object.isRequired
+    onePost: Proptypes.object.isRequired,
+    deletePost: Proptypes.func.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -62,5 +132,5 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 // export default connect(mapStateToProps)(App)
-export default connect(mapStateToProps, { getOnePost })(OnePost);
+export default connect(mapStateToProps, { getOnePost, deletePost })(OnePost);
 // export default PostOne;
