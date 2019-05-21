@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        pluscode: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         rating:{
             type: DataTypes.INTEGER,
             allowNull: false

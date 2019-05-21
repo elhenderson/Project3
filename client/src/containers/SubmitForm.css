@@ -4,11 +4,6 @@
     height: 2em;
 } */
 
-input[type=checkbox],
-input[type=radio] {
-    margin: 0;
-    width: auto;
-}
 
 .form-check {
     padding-left: 0.1em;
@@ -32,8 +27,4 @@ input[type=radio] {
 .custom-file-label::after {
     background-color: #00bcd4;
     color: white;
-}
-
-.form-control {
-    width: auto;
 }

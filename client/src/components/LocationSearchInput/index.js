@@ -5,11 +5,12 @@ import "./style.css"
 class LocationSearchInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { address: "", latitude: null, longitude: null }
+        this.state = { address: "", latitude: null, longitude: null, pluscode: null }
     }
 
     handleChange = (address) => {
-        this.setState({ address })
+        this.setState({ address });
+        this.props.setFormLocation(address);
     }
 
     // When the user selects an autocomplete suggestion...
@@ -23,7 +24,16 @@ class LocationSearchInput extends React.Component {
         });
 
         geocodeByAddress(address)
-            .then(res => getLatLng(res[0]))
+            .then(res => {
+                console.log("google autocomple address:");
+                console.log(res);
+                if ('plus_code' in res[0]) {
+                    this.setState({pluscode: res[0].plus_code.global_code});
+                    return getLatLng(res[0]);
+                } else {
+                    // TODO: handle APPROXIMATE location_type
+                }
+            })
             .then(({ lat, lng }) => {
                 this.setState({
                     latitude: lat,

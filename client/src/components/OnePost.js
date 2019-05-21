@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getOnePost } from '../actions/postActions'
 import { MDBContainer, MDBCol, MDBRow, MDBIcon, MDBBtn } from "mdbreact"
 import Images from '../components/Images'
+import LeafletMap from '../components/LeafletMap'
 
 class OnePost extends Component {
     componentWillMount() {
@@ -19,13 +20,13 @@ class OnePost extends Component {
                 </div>
 
                 <span className="block-example border border-info px-0 py-1">
-                    <MDBIcon icon="angle-up" className="px-2" />
+                    <MDBIcon icon="angle-down" className="px-2" />
                 </span>
                 <span className="block-example border-top border-bottom border-info px-3 py-1">
-                    3
+                    {this.props.onePost.rating}
                 </span>
                 <span className="block-example border border-info px-0 py-1">
-                    <MDBIcon icon="angle-down" className="px-2" />
+                    <MDBIcon icon="angle-up" className="px-2" />
                 </span>
                 <MDBBtn color="cyan" size="sm" className="z-depth-0">
                     <MDBIcon icon="edit" /> Edit
@@ -36,7 +37,12 @@ class OnePost extends Component {
 
                 <Images imgurls={this.props.onePost.photo} imgUploading={null}></Images>
 
-                <p>{this.props.onePost.notes}</p>
+                <MDBContainer className="cyan lighten-5">
+                    <span className="font-weight-bold" >Notes</span>
+                    <p>{this.props.onePost.notes}</p>
+                </MDBContainer>
+
+                <LeafletMap></LeafletMap>
             </MDBContainer>
         );
     }

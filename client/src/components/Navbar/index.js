@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./style.css"
 
 
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light cyan d-flex flex-column">
-        <a className="navbar-brand" href="/">GreenSpace!</a>
+    <nav className="navbar navbar-expand-lg navbar-dark cyan ">
+        <a className="navbar-brand" href="/"> <img alt="logo" src="/favicon.ico" style={{maxHeight:"32px"}}></img> GreenSpace!</a>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
