@@ -18,7 +18,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                img src="/assets/images/plantree4.jpg"
+                img src="/assets/images/cleanbeach2.jpg"
                 alt="First slide"
               />
             </MDBView>
@@ -27,7 +27,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                img src="/assets/images/cleanpark2.jpg"
+                img src="/assets/images/cleanbeach3.jpg"
                 alt="Second slide"
               />
             </MDBView>
@@ -36,7 +36,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                img src="/assets/images/cleanbeach2.jpg"
+                img src="/assets/images/plantree4.jpg"
                 alt="Third slide"
               />
               </MDBView>
@@ -45,7 +45,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                img src="/assets/images/cleanbeach3.jpg"
+                img src="/assets/images/cleanpark2.jpg"
                 alt="Fourth slide"
               />
                             </MDBView>
