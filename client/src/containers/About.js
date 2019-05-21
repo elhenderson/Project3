@@ -12,9 +12,6 @@ rcw.setAttribute('style', 'display:block');
 }
 render() {
 return (
-<<<<<<< HEAD
-<div className="container">
-=======
 <div className="">
 <h2>How it works</h2>
 <div>
@@ -30,7 +27,6 @@ return (
   <div></div>
   <h3> Recyclable or Not</h3>
 </div>
->>>>>>> origin/eli2
 <div id="recollect"></div>
 </div>
 );
