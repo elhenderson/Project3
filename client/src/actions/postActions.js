@@ -28,10 +28,10 @@ export const addPost = post => {
     }))
 }
 
-export const editPost = id => {
+export const editPost = id => dispatch => {
     axios
-    .put(`/editPost/${id}`)
-    .then(res => ({
+    .put(`/api/editPost/${id}`)
+    .then(res => dispatch({
         type: EDIT_POST,
         payload: id
     }))

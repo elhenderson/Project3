@@ -32,7 +32,7 @@ export default function(state = initialState, action) {
             }
         case EDIT_POST:
             return {
-                post: action.payload
+                postArray: action.payload
             }
         default:
             return state;
