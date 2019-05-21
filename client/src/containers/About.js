@@ -13,7 +13,7 @@ rcw.setAttribute('style', 'display:block');
 render() {
 return (
 <div class="about">
-<h3>How it works!</h3>
+<h3>How It Works</h3>
 <div class= "events">
   <p>
 <ul>
@@ -22,13 +22,14 @@ return (
   <li> Our site will also allow users to post and view clean-up projects </li>
   </ul>  
   </p>
-  <hr></hr>
+  <hr className="my-5" />
   <div class="recycle">
   <h3> Recyclable or Not</h3>
 </div>
 <div id="recollect"></div>
 </div>
 </div>
+
 );
 }
 }

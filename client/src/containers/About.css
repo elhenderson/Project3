@@ -1,10 +1,27 @@
 .about {
-    text-align: center
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(0, 151, 167);
+    
+    
   }
   .events {
-    text-align: left
+    text-align: left;
+    font-family: sans-serif;
+    color: rgb(0, 151, 167);
+    
   }
 
   .recycle {
-    text-align: center
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(0, 151, 167);
+    /* font-weight: 700! */
+  }
+
+  body {
+      display: flow-root;
+      margin: 0;
+      padding: 0
+
   }
