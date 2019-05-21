@@ -24,9 +24,9 @@ function Jumbotron() {
       <MDBRow style={{"width": "100%", "display": "flex"}}>
         <MDBCol className="text-white" style={{"width": "100%", "display": "flex", "justifyContent": "center", "margin": 0}}>
           <MDBJumbotron style={jbStyle}>
-            <h2 className="display-5">Save More Green Space!</h2>
+            <h2 className="display-5">Unlock More Green Space!</h2>
             <p className="lead">
-              An app that will help people to find and clean up trash in community areas.
+            We connect those in your community with a shared desire to keep your community green.
             </p>
             <MDBBtn href="/explore" className="aqua-gradient"> Explore </MDBBtn>
             <MDBBtn href="/submit" className="aqua-gradient"> Submit Post </MDBBtn>
