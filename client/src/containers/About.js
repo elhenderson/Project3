@@ -12,22 +12,22 @@ rcw.setAttribute('style', 'display:block');
 }
 render() {
 return (
-<div className="">
-<h2>How it works</h2>
-<div>
+<div class="about">
+<h3>How it works!</h3>
+<div class= "events">
   <p>
-  <h4> Search events you'd like to join or Post your own clean-up project</h4>
 <ul>
-  <li> Spot a location that needs to be beautified.</li>
-  <li> Post any related info such as location, type, and image.</li>
-  <li> Our site will then allow others to search for and join their desired beautifican project. </li>
+  <li> Spot a location that needs to be beautified</li>
+  <li> Post any related info such as location, type, and image</li>
+  <li> Our site will also allow users to post and view clean-up projects </li>
   </ul>  
   </p>
   <hr></hr>
-  <div></div>
+  <div class="recycle">
   <h3> Recyclable or Not</h3>
 </div>
 <div id="recollect"></div>
+</div>
 </div>
 );
 }
