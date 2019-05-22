@@ -13,7 +13,7 @@ import SubmitForm from "./containers/SubmitForm";
 import Search from "./containers/Search";
 import About from "./containers/About";
 import Login from "./containers/Login";
-
+import EditOne from './containers/EditOne'
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
@@ -33,6 +33,7 @@ function App() {
             <Route exact path="/explore/:id" component={ExploreOne} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/login" component={Auth} />
+            <Route exact path="/edit/:id" component={EditOne} />
           </Switch>
           <Footer />
       </Provider>
