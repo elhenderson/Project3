@@ -20,9 +20,6 @@ function Navbar() {
                 <li className={ window.location.pathname === "/explore" ? "nav-item active" : "nav-item" }>
                     <a className="nav-link" href="/explore"> Explore </a>
                 </li>
-                <li className={ window.location.pathname === "/search" ? "nav-item active" : "nav-item" }>
-                    <a className="nav-link" href="/search"> Search </a>
-                </li>
                 <li className={ window.location.pathname === "/about" ? "nav-item active" : "nav-item" }>
                     <a className="nav-link" href="/about"> About </a>
                 </li>
