@@ -88,7 +88,7 @@ class OnePost extends Component {
                 <span className="block-example border border-info px-0 py-1">
                     <MDBIcon icon="angle-up" className="px-2" />
                 </span>
-                {/* <MDBBtn color="cyan" size="sm" className="z-depth-0" onClick={() => this.toggleEditModal()}>
+                {/* <MDBBtn color="cyan" size="sm" className="z-depth-0" href={`/edit/${this.props.onepostid}`}>
                     <MDBIcon icon="edit" /> Edit
                 </MDBBtn> */}
                 <MDBBtn color="yellow" size="sm" className="z-depth-0" onClick={() => this.toggleModal()}>

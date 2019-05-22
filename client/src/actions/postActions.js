@@ -33,7 +33,7 @@ export const editPost = id => dispatch => {
     .put(`/api/editPost/${id}`)
     .then(res => dispatch({
         type: EDIT_POST,
-        payload: id
+        payload: res.data
     }))
 }
 
