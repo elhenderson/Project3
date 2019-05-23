@@ -9,7 +9,7 @@ class Auth extends Component {
   auth0 = new auth0.WebAuth({
     domain: "dev-y0g40tq6.auth0.com",
     clientID: "aGAyCECea05TdRTEhRXRJhhSmXVWPXz7",
-    redirectUri: "http://localhost:3000/explore",
+    redirectUri: "https://young-lowlands-24960.herokuapp.com/explore",
     responseType: "token id_token",
     scope: "openid"
   });
