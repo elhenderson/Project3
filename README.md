@@ -1,31 +1,24 @@
-# Create React Express App
+# GreenSpace!
+An app that helps people find, share and clean up trash in community areas.
 
-## About This Boilerplate
+Website: https://young-lowlands-24960.herokuapp.com/
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Users can:
+- Submit a post of trash they spot, include any info such as location, type, and images.
+- Explore the list of trash posts, add votes and comments.
+- View details of each trash post, and join a desired beautifican project.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Screenshots:
+**Home page** <br>
+<img src="https://i.loli.net/2019/06/02/5cf31c371fa3394019.png" alt="home" width=400>
 
-## Starting the app locally
+**Submit page** <br>
+<img src="https://i.loli.net/2019/06/02/5cf31c344a83b52320.png" alt="submit" width=400>
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+**View page** <br>
+<img src="https://i.loli.net/2019/06/02/5cf31c36a9b7942971.png" alt="exploreone" width=400>
 
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
-# Project3
--by GreenSpace!
+## Techs used:
+- node.js, express, sequelize
+- react, redux
+- material bootstrap, leaflet
