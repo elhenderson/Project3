@@ -3,7 +3,9 @@
     width: 30%;
     height: 2em;
 } */
-
+form {
+    margin: auto
+}
 
 .form-check {
     padding-left: 0.1em;
@@ -27,4 +29,9 @@
 .custom-file-label::after {
     background-color: #00bcd4;
     color: white;
+}
+
+footer  {
+    position: fixed;
+    width: 100%;
 }

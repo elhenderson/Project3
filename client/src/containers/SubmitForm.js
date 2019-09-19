@@ -173,9 +173,9 @@ class SubmitForm extends Component {
             <MDBContainer>
                 {/* <h2 className="h1-responsive font-weight-bold text-center my-5">POST PAGE</h2> */}
                 <MDBRow>
-                    <MDBCol md="10">
+                    <MDBCol md="10" style={{margin: "auto"}}>
                         <form onSubmit={this.submitHandler}>
-                            <h3 className="text-center font-weight-bold my-4" style={{ color: "#0097a7" }}>Post a trash</h3>
+                            <h3 className="text-center font-weight-bold my-4" style={{ color: "#0097a7" }}>Post a location which needs to be cleaned</h3>
                             <MDBInput
                                 label="Title"
                                 icon="tag" iconClass="cyan-text"
